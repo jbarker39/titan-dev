@@ -9,10 +9,10 @@ from sfrDBobj import *
 
 dbname = "localhost","root","2passme4","titan"
 db = DBobj(dbname)
-r = db.all_rack_names()
+#r = db.all_rack_names()
+r = db.all_assets()
 for i in r:
-    print i[0]
-
+    print i
 #f = open ("titan_M610_blades.csv")
 #line = []
 #for l in f:
@@ -45,7 +45,7 @@ for i in r:
 #    print ("%s %s %s %s %s %s %s") % (line_values[1],line_values[5],db.get_rack_id_from_rack_name(line_values[5].strip()), \
 #                                line_values[4],db.get_model_id_from_model_name(line_values[4].strip()), \
 #                                line_values[6],db.get_cust_id_from_customer_name(line_values[6].strip()))
-                     
+
 
 #
 #rn = ("BW02","BW03","BW04","BW05","BW06","BW07","BW08","BW09","BW10","BW11","BW12","BW13","BW14","BW17","CC02","CC03","CC04","CC05","CC06","CC07","CC08","Floor",)

@@ -307,8 +307,13 @@ dbname2 = "localhost","root","2passme4","qahmcons"
 dbname3 = "localhost","root","2passme4","slc"
 dbname4 = "localhost","root","2passme4","newslc"
 dbname5 = "localhost","root","2passme4","qahm2"
+
+#localhost contains database
+#dbnameA = "localhost","root","2passme4","titan"
 #dbnameB = "localhost","root","2passme4","newslc"
+#dbname7 = "localhost","root","2passme4","newslc"
 #dbname6 = "localhost","root","2passme4","titan"
+
 #dbnameA = "util-3.endofdays-2012.dev","jbarker","Titan#112","titan"
 #dbnameB = "util-3.endofdays-2012.dev","jbarker","Titan#112","newslc"
 #dbnameA = "rh75dev.endofdays-2012.dev","jbarker","Titan#112","titan"

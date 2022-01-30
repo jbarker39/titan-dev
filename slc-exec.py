@@ -307,16 +307,17 @@ dbname2 = "localhost","root","2passme4","qahmcons"
 dbname3 = "localhost","root","2passme4","slc"
 dbname4 = "localhost","root","2passme4","newslc"
 dbname5 = "localhost","root","2passme4","qahm2"
-dbname6 = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","titan"
-#dbnameA = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","titan"
-#dbnameA = "20-04lts,endofdays-2012.dev","jbarker","Titan#112","titan"
 #dbnameB = "localhost","root","2passme4","newslc"
 #dbname6 = "localhost","root","2passme4","titan"
 #dbnameA = "util-3.endofdays-2012.dev","jbarker","Titan#112","titan"
-#dbnameA = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","titan"
-dbnameA = "rh75dev.endofdays-2012.dev","jbarker","Titan#112","titan"
-#dbnameB = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","newslc"
+#dbnameB = "util-3.endofdays-2012.dev","jbarker","Titan#112","newslc"
+#dbnameA = "rh75dev.endofdays-2012.dev","jbarker","Titan#112","titan"
+#dbnameB = "rh75dev.endofdays-2012.dev","jbarker","Titan#112","newslc"
+
+#20-04ltsdev is the primary mysql server 
+dbnameA = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","titan"
 dbnameB = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","newslc"
+dbname6 = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","titan"
 dbname7 = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","newslc"	
 
 

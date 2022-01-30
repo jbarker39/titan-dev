@@ -1,0 +1,7 @@
+*.pyc
+__pycache__
+csv_archives/
+archives/
+py3.10.1
+.idea
+

@@ -301,29 +301,35 @@ elif len(args) == 3:
 run = True
 debug = False
 
+host = '20-04ltsdev'
+if (host == '20-04ltsdev'):
+	#20-04ltsdev is the primary mysql server 
+	dbnameA = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","titan"
+	dbnameB = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","newslc"
+	dbname6 = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","titan"
+	dbname7 = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","newslc"	
 
-dbname1 = "localhost","root","2passme4","newqwest"
-dbname2 = "localhost","root","2passme4","qahmcons"
-dbname3 = "localhost","root","2passme4","slc"
-dbname4 = "localhost","root","2passme4","newslc"
-dbname5 = "localhost","root","2passme4","qahm2"
+elif (host == 'localhost'): 	#localhost contains database
+	dbname1 = "localhost","root","2passme4","newqwest"
+	dbname2 = "localhost","root","2passme4","qahmcons"
+	dbname3 = "localhost","root","2passme4","slc"
+	dbname4 = "localhost","root","2passme4","newslc"
+	dbname5 = "localhost","root","2passme4","qahm2"
+	dbname6 = "localhost","root","2passme4","titan"
+	dbname7 = "localhost","root","2passme4","newslc"
+	dbnameA = "localhost","root","2passme4","titan"
+	dbnameB = "localhost","root","2passme4","newslc"
 
-#localhost contains database
-#dbnameA = "localhost","root","2passme4","titan"
-#dbnameB = "localhost","root","2passme4","newslc"
-#dbname7 = "localhost","root","2passme4","newslc"
-#dbname6 = "localhost","root","2passme4","titan"
+elif (host == 'util-3'):
+	dbnameA = "util-3.endofdays-2012.dev","jbarker","Titan#112","titan"
+	dbnameB = "util-3.endofdays-2012.dev","jbarker","Titan#112","newslc"
 
-#dbnameA = "util-3.endofdays-2012.dev","jbarker","Titan#112","titan"
-#dbnameB = "util-3.endofdays-2012.dev","jbarker","Titan#112","newslc"
-#dbnameA = "rh75dev.endofdays-2012.dev","jbarker","Titan#112","titan"
-#dbnameB = "rh75dev.endofdays-2012.dev","jbarker","Titan#112","newslc"
-
-#20-04ltsdev is the primary mysql server 
-dbnameA = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","titan"
-dbnameB = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","newslc"
-dbname6 = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","titan"
-dbname7 = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","newslc"	
+elif (host == 'rh75dev'):
+	dbnameA = "rh75dev.endofdays-2012.dev","jbarker","Titan#112","titan"
+	dbnameB = "rh75dev.endofdays-2012.dev","jbarker","Titan#112","newslc"
+else:
+	print("OOPS {}".format(host))
+	exit()
 
 
 if s == "MLBTG":

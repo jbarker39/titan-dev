@@ -282,6 +282,8 @@ def	sysinfo(assets,rn,su,nodetype):
 					return ""
 		return ""
 
+# use python slc-exec.py action mysql_password
+
 (options, args) = parser.parse_args()
 print (args)
 s = args[0]

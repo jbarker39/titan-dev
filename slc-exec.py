@@ -283,15 +283,17 @@ def	sysinfo(assets,rn,su,nodetype):
 		return ""
 
 (options, args) = parser.parse_args()
+print (args)
 s = args[0]
 print ("s: {} len: {}".format (s,len(args)))
-if len(args) == 2: filename = table = switch = rack_name = args[1]
+if len(args) == 2:
+	filename = table = switch = rack_name = passwd = args[1]
+
 
 elif len(args) == 3:
 	start_ip = table = switch = args[1]
 	end_ip = filename = nodetype = datacenter = args[2]
-	dbname = "util-1.endofdays-2012.dev","root","2passme4",datacenter
-
+	
 
 ################################################################################
 #
@@ -304,33 +306,33 @@ debug = False
 host = 'macbook'
 if (host == '20-04ltsdev'):
 	#20-04ltsdev is the primary mysql server 
-	dbnameA = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","titan"
-	dbnameB = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","newslc"
-	dbname6 = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","titan"
-	dbname7 = "20-04ltsdev.endofdays-2012.dev","jbarker","Titan#112","newslc"	
+	dbnameA = "20-04ltsdev.endofdays-2012.dev","jbarker",passwd,"titan"
+	dbnameB = "20-04ltsdev.endofdays-2012.dev","jbarker",passwd,"newslc"
+	dbname6 = "20-04ltsdev.endofdays-2012.dev","jbarker",passwd,"titan"
+	dbname7 = "20-04ltsdev.endofdays-2012.dev","jbarker",passwd,"newslc"	
 
 elif (host == 'localhost'): 	#localhost contains database
-	dbname1 = "localhost","root","2passme4","newqwest"
-	dbname2 = "localhost","root","2passme4","qahmcons"
-	dbname3 = "localhost","root","2passme4","slc"
-	dbname4 = "localhost","root","2passme4","newslc"
-	dbname5 = "localhost","root","2passme4","qahm2"
-	dbname6 = "localhost","root","2passme4","titan"
-	dbname7 = "localhost","root","2passme4","newslc"
-	dbnameA = "localhost","root","2passme4","titan"
-	dbnameB = "localhost","root","2passme4","newslc"
+	dbname1 = "localhost","root",passwd,"newqwest"
+	dbname2 = "localhost","root",passwd,"qahmcons"
+	dbname3 = "localhost","root",passwd,"slc"
+	dbname4 = "localhost","root",passwd,"newslc"
+	dbname5 = "localhost","root",passwd,"qahm2"
+	dbname6 = "localhost","root",passwd,"titan"
+	dbname7 = "localhost","root",passwd,"newslc"
+	dbnameA = "localhost","root",passwd,"titan"
+	dbnameB = "localhost","root",passwd,"newslc"
 
 elif (host == 'util-3'):
-	dbnameA = "util-3.endofdays-2012.dev","jbarker","Titan#112","titan"
-	dbnameB = "util-3.endofdays-2012.dev","jbarker","Titan#112","newslc"
+	dbnameA = "util-3.endofdays-2012.dev","jbarker",passwd,"titan"
+	dbnameB = "util-3.endofdays-2012.dev","jbarker",passwd,"newslc"
 
 elif (host == 'macbook'):
-	dbnameA = "10.0.0.217","jbarker","Titan#112","titan"
-	dbnameB = "10.0.0.217","jbarker","Titan#112","newslc"
+	dbnameA = "10.0.0.217","jbarker",passwd,"titan"
+	dbnameB = "10.0.0.217","jbarker",passwd,"newslc"
 
 elif (host == 'rh75dev'):
-	dbnameA = "rh75dev.endofdays-2012.dev","jbarker","Titan#112","titan"
-	dbnameB = "rh75dev.endofdays-2012.dev","jbarker","Titan#112","newslc"
+	dbnameA = "rh75dev.endofdays-2012.dev","jbarker",passwd,"titan"
+	dbnameB = "rh75dev.endofdays-2012.dev","jbarker",passwd,"newslc"
 else:
 	print("OOPS {}".format(host))
 	exit()

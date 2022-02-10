@@ -6,8 +6,8 @@ import re
 import time
 from sfrDBobj import *
 
-
-dbname = "util-3.endofdays-2012.dev","root","2passme4","titan"
+passed = ""
+dbname = "util-3.endofdays-2012.dev","root",passwd,"titan"
 #Starting U Asset Tag Model Name Rack Name Serial Number
 srec = slcrecord('"3","AT","Model","Rack","SN"')
 print (srec.asset_tag)

@@ -5,3 +5,4 @@ archives/
 py3.10.1
 .idea
 
+.vscode/settings.json

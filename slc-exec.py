@@ -285,9 +285,9 @@ def	sysinfo(assets,rn,su,nodetype):
 # use python slc-exec.py action mysql_password
 
 (options, args) = parser.parse_args()
-print (args)
+#print (args)
 s = args[0]
-print ("s: {} len: {}".format (s,len(args)))
+#print ("s: {} len: {}".format (s,len(args)))
 if len(args) == 2:
 	filename = table = switch = rack_name = passwd = args[1]
 
@@ -305,7 +305,7 @@ elif len(args) == 3:
 run = True
 debug = False
 
-host = 'macbook'
+host = '20-04ltsdev'
 if (host == '20-04ltsdev'):
 	#20-04ltsdev is the primary mysql server 
 	dbnameA = "20-04ltsdev.endofdays-2012.dev","jbarker",passwd,"titan"
@@ -329,8 +329,8 @@ elif (host == 'util-3'):
 	dbnameB = "util-3.endofdays-2012.dev","jbarker",passwd,"newslc"
 
 elif (host == 'macbook'):
-	dbnameA = "10.0.0.217","jbarker",passwd,"titan"
-	dbnameB = "10.0.0.217","jbarker",passwd,"newslc"
+	dbnameA = "10.0.0.234","jbarker",passwd,"titan"
+	dbnameB = "10.0.0.234","jbarker",passwd,"newslc"
 
 elif (host == 'rh75dev'):
 	dbnameA = "rh75dev.endofdays-2012.dev","jbarker",passwd,"titan"

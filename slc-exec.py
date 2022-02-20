@@ -329,8 +329,8 @@ elif (host == 'util-3'):
 	dbnameB = "util-3.endofdays-2012.dev","jbarker",passwd,"newslc"
 
 elif (host == 'macbook'):
-	dbnameA = "10.0.0.234","jbarker",passwd,"titan"
-	dbnameB = "10.0.0.234","jbarker",passwd,"newslc"
+	dbnameA = "macbook.endofdays-2012.dev","jbarker",passwd,"titan"
+	dbnameB = "macbook.endofdays-2012.dev","jbarker",passwd,"newslc"
 
 elif (host == 'rh75dev'):
 	dbnameA = "rh75dev.endofdays-2012.dev","jbarker",passwd,"titan"

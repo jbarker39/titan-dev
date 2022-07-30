@@ -305,7 +305,7 @@ elif len(args) == 3:
 run = True
 debug = False
 
-host = '20-04ltsdev'
+host = 'db-1'
 if (host == '20-04ltsdev'):
 	#20-04ltsdev is the primary mysql server 
 	dbnameA = "20-04ltsdev.endofdays-2012.dev","jbarker",passwd,"titan"
@@ -335,6 +335,11 @@ elif (host == 'macbook'):
 elif (host == 'rh75dev'):
 	dbnameA = "rh75dev.endofdays-2012.dev","jbarker",passwd,"titan"
 	dbnameB = "rh75dev.endofdays-2012.dev","jbarker",passwd,"newslc"
+
+elif (host == 'db-1'):
+	dbnameA = "db-1.endofdays-2012.dev","jbarker",passwd,"titan"
+	dbnameB = "db-1.endofdays-2012.dev","jbarker",passwd,"newslc"
+	
 else:
 	print("OOPS {}".format(host))
 	exit()

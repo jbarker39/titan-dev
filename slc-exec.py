@@ -332,9 +332,10 @@ elif (host == 'macbook'):
 	dbnameA = "macbook.endofdays-2012.dev","jbarker",passwd,"titan"
 	dbnameB = "macbook.endofdays-2012.dev","jbarker",passwd,"newslc"
 
-elif (host == 'rh75dev'):
-	dbnameA = "rh75dev.endofdays-2012.dev","jbarker",passwd,"titan"
-	dbnameB = "rh75dev.endofdays-2012.dev","jbarker",passwd,"newslc"
+elif (host == 'macstudio'):
+	dbnameA = "macstudio.endofdays-2012.dev","jbarker",passwd,"titan"
+	dbnameB = "macstudio.endofdays-2012.dev","jbarker",passwd,"newslc"
+
 elif (host == 'db-1'):
 	dbnameA = "db-1.endofdays-2012.dev","jbarker",passwd,"titan"
 	dbnameB = "db-1.endofdays-2012.dev","jbarker",passwd,"newslc"

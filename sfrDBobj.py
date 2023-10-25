@@ -20,7 +20,7 @@ wake_Index = 7
 class slcrecord:
 		def __init__(self,line):
 				linein = line.split(",")
-				#print linein
+				#print (linein)
 				#Starting U Asset Tag Model Name Rack Name Serial Number
 				self.starting_u = linein[0].strip()
 				self.asset_tag = linein[1].strip()

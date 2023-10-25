@@ -6,15 +6,15 @@ import re
 import time
 from sfrDBobj import *
 
-passed = ""
-dbname = "util-3.endofdays-2012.dev","root",passwd,"titan"
+passwd = "Titan#112"
+dbname = "db-1.endofdays-2012.dev","jbarker",passwd,"titan"
 #Starting U Asset Tag Model Name Rack Name Serial Number
-srec = slcrecord('"3","AT","Model","Rack","SN"')
-print (srec.asset_tag)
-# db = DBobj(dbname)
-# r=db.print_qwest()
-# for i in r:
-#     print (i)
+#srec = slcrecord('"3","AT","Model","Rack","SN"')
+#print(srec.model_name)
+db = DBobj(dbname)
+r=db.print_qwest()
+for i in r:
+    print (i)
 #r = db.all_rack_names()
 #r = db.all_assets()
 #for i in r:

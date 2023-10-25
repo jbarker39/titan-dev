@@ -305,7 +305,7 @@ elif len(args) == 3:
 run = True
 debug = False
 
-host = 'util-1'
+host = 'db-1'
 if (host == '20-04ltsdev'):
 	#20-04ltsdev is the primary mysql server 
 	dbnameA = "20-04ltsdev.endofdays-2012.dev","jbarker",passwd,"titan"

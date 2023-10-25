@@ -1,8 +1,9 @@
 #!/usr/bin/python
 import os
 import sys
+import subprocess
 import string
-import mysql.connector
+#import mysql.connector
 import re
 import time
 from sfrDBobj import *
@@ -166,14 +167,14 @@ def	ignore(model):
 
 def ping(hostname):
 	cmd = "ping c2 " + hostname
-	result = commands.getoutput(cmd)
+	result = subprocess.getoutput(cmd)
 	if re.search("2 received",result):
 		return True
 	else:
 		return False
 	
 def	dns(hn):
-	DNS.ParseResolvConf()
+#	DNS.ParseResolvConf()
 #	r=DNS.Request(qtype='soa')
 #	res = r.req('sea2.qpass.net')
 #	res.show()
@@ -184,7 +185,7 @@ def	dns(hn):
 #	except:
 #		return None
 	try:
-		s = DNS.Request(hn)
+#		s = DNS.Request(hn)
 		resolve = s.req().answers
 		#print resolve,hn
 		if (resolve) :
@@ -384,7 +385,7 @@ elif s == "completeslc":
 		f = slcrecord_confirm(i)
 		db.update_fqdn_by_asset_tag(f.asset_tag,f.fqdn)
 		#print "{}  {}" % (f, db.get_aid(f))
-		print ( "{},{},{}".format (curar.asset_tag,curar.fqdn,newar.fqdn))
+		#print ( "{},{},{}".format (curar.asset_tag,curar.fqdn,newar.fqdn))
 
 elif s == "decom_repair": #single time use - DO NOT RUN again
 	db = DBobj(dbname6)
@@ -640,12 +641,12 @@ elif s == "AOP18":
 #python slcexec.py 12 tablename filename	
 
 if s == 'dumptable': #hostname,username,passed,usedb
-	db = DBobj(dbname)
-	print (dbname)
+	db = DBobj(dbnameA)
+	print (dbnameA)
 	results = db.dump_db(table)
 elif s == '10.5': #python qwestexec.py switch [qwest/newqwest]
 	if switch == "qwest":
-		db = DBobj(dbname)
+		db = DBobj(dbnameA)
 	else:
 		db = DBobj(dbname1)
 	results = db.print_qwest()
@@ -653,7 +654,7 @@ elif s == '10.5': #python qwestexec.py switch [qwest/newqwest]
 		print (i)
  
 elif s == '11':#python qwestexec.py 11 "rack_name"
-	db = DBobj(dbname)
+	db = DBobj(dbnameA)
 	assets = db.return_all_assets(rack_name)
 	db1 = DBobj(dbname1)
 	for i in assets:
@@ -662,11 +663,11 @@ elif s == '11':#python qwestexec.py 11 "rack_name"
 		# db1.update_su_newqwest(ar.asset_tag,ar.starting_u)
  
 elif s == '12':
-	db = DBobj(dbname)
+	db = DBobj(dbnameA)
 	results = db.load_db(table,filename)
  
 elif s == '14':
-	db = DBobj(dbname)
+	db = DBobj(dbnameA)
 	assets = db.return_all_assets(rack_name)
 	db1 = DBobj(dbname1)
 	for i in assets:
@@ -677,7 +678,7 @@ elif s == '16':	 #python qwestexec.py 16 <dbname [qwest:newqwest]> <nodetype [FQ
 		rowc = ("\nSU","C098","C099","C100","C101","C102","C103","C104","C105","C106","C107","C108\n")
 		rowd = ("\nSU","D098","D099","D100","D101","D102","D103","D104","D105","D106","D107","D108\n")
 		if switch == 'oldqwest':
-			db = DBobj(dbname)
+			db = DBobj(dbnameA)
 		elif switch == 'newqwest':
 			db = DBobj(dbname1)
 		assets = db.all_assets()
@@ -730,7 +731,7 @@ elif s == 'RowB':
 	current_model_name=6
 	mfg = 7
 	move = {}
-	db = DBobj(dbname)
+	db = DBobj(dbnameA)
 	current = db.all_assets()
 	db1 = DBobj(dbname1)
 	newqwest = db1.all_assets()
@@ -802,7 +803,7 @@ elif s == 'B100Cons':
 	current_model_name=6
  
 	move = {}
-	db = DBobj(dbname)
+	db = DBobj(dbnameA)
 	current = db.all_assets()
 	db1 = DBobj(dbname1)
 	newqwest = db1.all_assets()
@@ -834,7 +835,7 @@ elif s == 'Pile': #python qwestexec.py Pile <rack_name>
 	current_model_name=6
  
 	move = {}
-	db = DBobj(dbname)
+	db = DBobj(dbnameA)
 	current = db.all_assets()
 	db1 = DBobj(dbname1)
 	newqwest = db1.all_assets()
@@ -865,7 +866,7 @@ elif s == 'Cons':  #python qwestexec.py Cons <rack_name>
 	current_model_name=6
  
 	move = {}
-	db = DBobj(dbname)
+	db = DBobj(dbnameA)
 	current = db.all_assets()
 	db1 = DBobj(dbname1)
 	newqwest = db1.all_assets()
@@ -895,7 +896,7 @@ elif s == 'Evac': #python qwestexec.py Evac <rack_name>
 	current_model_name=6
  
 	move = {}
-	db = DBobj(dbname)
+	db = DBobj(dbnameA)
 	current = db.all_assets()
 	db1 = DBobj(dbname1)
 	newqwest = db1.all_assets()
@@ -943,7 +944,7 @@ elif s == 'EOL2': #python qwestexec.py Evac <rack_name>
 	current_model_name=6
  
 	move = {}
-	db = DBobj(dbname)
+	db = DBobj(dbnameA)
 	current = db.all_assets()
 	db1 = DBobj(dbname1)
 	newqwest = db1.all_assets()
@@ -968,7 +969,7 @@ elif s == 'SLCAllRows':
 	db = DBobj(dbname3)
 	racks = db.all_rack_names();
 	for rn in racks:
-		# current = db.all_assets_rack_audit(rn)
+		current = db.all_assets_rack_audit(rn)
 		print ("RACK: {}" .format (rn))
 		for i in current:
 			curar = asset_record(i)

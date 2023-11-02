@@ -9,9 +9,9 @@ import time
 from sfrDBobj import *
 #from ipmanage import *
 #from DNSsubs import *
-from optparse import OptionParser
+import argparse
 debug = False
-parser = OptionParser()
+parser = argparse.ArgumentParser()
 
 Customer = 0
 OrderQty = 1
@@ -284,19 +284,15 @@ def	sysinfo(assets,rn,su,nodetype):
 		return ""
 
 # use python slc-exec.py action mysql_password
+parser.add_argument("host", help="database host")
+parser.add_argument("actor", help='actor requested')
+parser.add_argument('password', help="MySQL password")
+#parser.add_argument("--debug", help="debug")
+args = parser.parse_args()
+s = args.actor
+host = args.host
+filename = table = switch = rack_name = passwd = args.password
 
-(options, args) = parser.parse_args()
-#print (args)
-s = args[0]
-#print ("s: {} len: {}".format (s,len(args)))
-if len(args) == 2:
-	filename = table = switch = rack_name = passwd = args[1]
-
-
-elif len(args) == 3:
-	start_ip = table = switch = args[1]
-	end_ip = filename = nodetype = datacenter = args[2]
-	
 
 ################################################################################
 #
@@ -304,9 +300,16 @@ elif len(args) == 3:
 #
 ################################################################################
 run = True
-debug = False
-
-host = 'db-1'
+if debug:
+	#if args.verbosity >=1:
+	#if args.verbosity >= 3:
+	#start_ip = table = switch = args.arg2
+	#	end_ip = filename = nodetype = datacenter = args.arg3
+	#print(f's: {s} arg1: {args.arg1} arg2: {args.arg2} arg3: {args.arg3}')
+	print(f's: {s} actor: {args.actor} password: {args.password}')
+	print(f'passwd: {passwd}')
+	print(host)
+#host = 'db-2'
 if (host == '20-04ltsdev'):
 	#20-04ltsdev is the primary mysql server 
 	dbnameA = "20-04ltsdev.endofdays-2012.dev","jbarker",passwd,"titan"

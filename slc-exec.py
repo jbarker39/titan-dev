@@ -10,7 +10,7 @@ from sfrDBobj import *
 #from ipmanage import *
 #from DNSsubs import *
 import argparse
-debug = False
+debug = True
 parser = argparse.ArgumentParser()
 
 Customer = 0
@@ -347,6 +347,10 @@ elif (host == 'macstudio'):
 elif (host == 'db-1'):
 	dbnameA = "db-1.endofdays-2012.dev","jbarker",passwd,"titan"
 	dbnameB = "db-1.endofdays-2012.dev","jbarker",passwd,"newslc"
+
+elif (host == 'dev1'):
+	dbnameA = "dev1.endofdays-2012.dev","jbarker",passwd,"titan"
+	dbnameB = "dev1.endofdays-2012.dev","jbarker",passwd,"newslc"
 else:
 	print("OOPS {}".format(host))
 	exit()

@@ -28,7 +28,7 @@ HardDrive1Desc = 11
 HardDrive1UnitQty = 12
 WarrantyEndDate = 13
 
-nodetype=4
+nodetype=5
 
 class DellQpass08172010:
 	def __init__(self,fields):

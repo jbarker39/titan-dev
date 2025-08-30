@@ -10,7 +10,7 @@ from sfrDBobj import *
 #from ipmanage import *
 #from DNSsubs import *
 import argparse
-debug = True
+debug = False
 parser = argparse.ArgumentParser()
 
 Customer = 0

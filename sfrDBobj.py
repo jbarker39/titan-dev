@@ -138,7 +138,7 @@ class DBobj:
 				self.usedb = dbname[3].strip()
 
 				try:
-						print ("db-1: hostname: {} username: {} password: {} db: {}" .format (self.hostname,self.username,self.passwd,self.usedb))
+						#print ("db-1: hostname: {} username: {} password: {} db: {}" .format (self.hostname,self.username,self.passwd,self.usedb))
 						self.conn = mysql.connector.connect (host=self.hostname,user=self.username,password=self.passwd,database=self.usedb,auth_plugin='mysql_native_password')
 						self.cursor = self.conn.cursor()
 				except mysql.connector.Error as e:

@@ -319,16 +319,16 @@ if (host == '20-04ltsdev'):
 	dbname6 = "20-04ltsdev.endofdays-2012.dev","jbarker",passwd,"titan"
 	dbname7 = "20-04ltsdev.endofdays-2012.dev","jbarker",passwd,"newslc"	
 
-elif (host == 'localhost'): 	#localhost contains database
-	dbname1 = "localhost","root",passwd,"newqwest"
-	dbname2 = "localhost","root",passwd,"qahmcons"
-	dbname3 = "localhost","root",passwd,"slc"
-	dbname4 = "localhost","root",passwd,"newslc"
-	dbname5 = "localhost","root",passwd,"qahm2"
-	dbname6 = "localhost","root",passwd,"titan"
-	dbname7 = "localhost","root",passwd,"newslc"
-	dbnameA = "localhost","root",passwd,"titan"
-	dbnameB = "localhost","root",passwd,"newslc"
+# elif (host == 'localhost'): 	#localhost contains database
+# 	dbname1 = "localhost","root",passwd,"newqwest"
+# 	dbname2 = "localhost","root",passwd,"qahmcons"
+# 	dbname3 = "localhost","root",passwd,"slc"
+# 	dbname4 = "localhost","root",passwd,"newslc"
+# 	dbname5 = "localhost","root",passwd,"qahm2"
+# 	dbname6 = "localhost","root",passwd,"titan"
+# 	dbname7 = "localhost","root",passwd,"newslc"
+# 	dbnameA = "localhost","root",passwd,"titan"
+# 	dbnameB = "localhost","root",passwd,"newslc"
 
 elif (host == 'util-3'):
 	dbnameA = "util-3.endofdays-2012.dev","jbarker",passwd,"titan"
@@ -353,6 +353,12 @@ elif (host == 'db-1'):
 elif (host == 'dev1'):
 	dbnameA = "dev1.endofdays-2012.dev","jbarker",passwd,"titan"
 	dbnameB = "dev1.endofdays-2012.dev","jbarker",passwd,"newslc"
+
+elif (host == 'localhost'):
+	dbnameA = "127.0.0.1","jbarker",passwd,"titan"
+	dbnameB = "127.0.0.1","jbarker",passwd,"newslc"
+	print("inside elif: {}, {}, {}".format(host, dbnameA, passwd))
+
 else:
 	print("OOPS {}".format(host))
 	exit()
@@ -494,7 +500,7 @@ elif s == "report_SLC":
 			#print r
 			#if (r[2] != 'decom'):
 				#if (r[8] != 'NetApp'):
-		print ('{},{},{},{},{},{},{},{},{},{},{}'.format(r[0],r[1],r[2],r[3],r[4],r[5],r[6],r[7],r[8],r[9],r[10]))
+		print ('newslc: {},{},{},{},{},{},{},{},{},{},{}'.format(r[0],r[1],r[2],r[3],r[4],r[5],r[6],r[7],r[8],r[9],r[10]))
 				#else:
 					#print (r[8])
 
@@ -521,7 +527,7 @@ elif s == "report_titan":
 	print ('Asset_id,FQDN,rack,model,serial_number,asset_tag,Customer,starting U,Mfg,decom,warranty')
 	for r in results:
 		#print len(r)
-		print ('{},{},{},{},{},{},{},{},{},{},{}'.format(r[0],r[1],r[2],r[3],r[4],r[5],r[6],r[7],r[8],r[9],r[10]))
+		print ('Titan: {},{},{},{},{},{},{},{},{},{},{}'.format(r[0],r[1],r[2],r[3],r[4],r[5],r[6],r[7],r[8],r[9],r[10]))
 
 		#    0      1       2         3           4            5            6          7       8              9           10
 		#asset_id,fqdn,rack_name,model_name,serial_number,asset_tag,customer_name,starting_u,manufacturer,warranty_date,decom
@@ -534,7 +540,7 @@ elif s == "report_titan_support":
 		#print (len(r))
 		#print (r)
 		if (r[10] == 'in service'):
-			print ('{},{},{},{},{},{},{},{},{},{},{}'.format(r[0],r[2],r[3],r[1],r[4],r[5],r[6],r[7],r[8],r[9],r[10]))
+			print ('{},{},{},{},{},{},{},{},{},{},{},{}'.format(dbnameA[3],r[0],r[2],r[3],r[1],r[4],r[5],r[6],r[7],r[8],r[9],r[10]))
 	db1 = DBobj(dbnameB)
 	results  = db1.full_assets()
 	print ('Asset_id,Rack,model,FQDN,serial_number,asset_tag,Customer,starting U,Mfg,warranty,decom')
@@ -542,7 +548,7 @@ elif s == "report_titan_support":
 		#print (len(r))
 		#print (r)
 		if (r[10] == 'in service'):
-			print ('{},{},{},{},{},{},{},{},{},{},{}'.format(r[0],r[2],r[3],r[1],r[4],r[5],r[6],r[7],r[8],r[9],r[10]))
+			print ('{},{},{},{},{},{},{},{},{},{},{},{}'.format(dbnameB[3],r[0],r[2],r[3],r[1],r[4],r[5],r[6],r[7],r[8],r[9],r[10]))
 
 elif s == "report_titan_assets":
 	db1 = DBobj(dbnameA)

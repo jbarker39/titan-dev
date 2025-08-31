@@ -357,7 +357,7 @@ elif (host == 'dev1'):
 elif (host == 'localhost'):
 	dbnameA = "127.0.0.1","jbarker",passwd,"titan"
 	dbnameB = "127.0.0.1","jbarker",passwd,"newslc"
-	print("inside elif: {}, {}, {}".format(host, dbnameA, passwd))
+	#print("inside elif: {}, {}, {}".format(host, dbnameA, passwd))
 
 else:
 	print("OOPS {}".format(host))

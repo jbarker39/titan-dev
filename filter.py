@@ -9,3 +9,4 @@ for i1 in f:
         pass
     else:
         print("{},{},{},{}".format(l[0],l[2],l[3],l[9]))
+        print("Thats all folks")
